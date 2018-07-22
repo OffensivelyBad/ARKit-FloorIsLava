@@ -1,23 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13127" systemVersion="16F43c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13109"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="FloorIsLava" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E30-Xh-wY5"/>
+                        <viewControllerLayoutGuide type="bottom" id="6SK-h5-sNW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ag8-Ec-Kc0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arscnView>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2o-Kn-hLl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reT-qc-v0l">
+                                <rect key="frame" x="24" y="597" width="327" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WNy-Ux-iCq"/>
+                                </constraints>
+                                <state key="normal" title="Change floor"/>
+                                <connections>
+                                    <action selector="changePhotoWithSender:" destination="BV1-FR-VrT" eventType="touchUpInside" id="CqG-wL-UQS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="reT-qc-v0l" firstAttribute="leading" secondItem="Ag8-Ec-Kc0" secondAttribute="leadingMargin" constant="8" id="9Ir-8s-bLd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="reT-qc-v0l" secondAttribute="trailing" constant="8" id="CeS-yQ-Wua"/>
+                            <constraint firstItem="U2o-Kn-hLl" firstAttribute="top" secondItem="Ag8-Ec-Kc0" secondAttribute="top" id="MIP-Gw-JfA"/>
+                            <constraint firstAttribute="trailing" secondItem="U2o-Kn-hLl" secondAttribute="trailing" id="dJG-W7-M85"/>
+                            <constraint firstItem="U2o-Kn-hLl" firstAttribute="leading" secondItem="Ag8-Ec-Kc0" secondAttribute="leading" id="dRp-Er-s0F"/>
+                            <constraint firstItem="6SK-h5-sNW" firstAttribute="top" secondItem="U2o-Kn-hLl" secondAttribute="bottom" id="kUz-c5-LH8"/>
+                            <constraint firstItem="6SK-h5-sNW" firstAttribute="top" secondItem="reT-qc-v0l" secondAttribute="bottom" constant="30" id="sQE-kU-Uh1"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <outlet property="sceneView" destination="U2o-Kn-hLl" id="D4n-Qd-WEy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
